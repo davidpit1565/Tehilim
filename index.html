@@ -566,6 +566,10 @@ input,select,button{max-width:100%;box-sizing:border-box}
   color:var(--muted);font-size:12.5px;line-height:1.9;opacity:.85}
 .memorial span{font-size:11px;letter-spacing:.5px}
 [data-theme="dark"] .memorial{color:#8d97ad}
+.zmanim-soon{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;
+  padding:16px 14px;border:1px dashed var(--line-strong);border-radius:13px;color:var(--muted);
+  font-family:var(--font-ui);font-size:13px;background:var(--panel)}
+.zmanim-soon svg{width:16px;height:16px;flex:none;opacity:.7}
 
 </style>
 </head>
@@ -781,6 +785,17 @@ const I = {
   plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>',
   globe:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg>',
   clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  zDawn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v3M5.6 7.6l1.4 1.4M18.4 7.6l-1.4 1.4M3 15h2M19 15h2"/><path d="M6 15a6 6 0 0 1 12 0"/><path d="M2 19h20"/></svg>',
+  zEye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg>',
+  zSunrise:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v5"/><path d="M4.5 9.5l1.8 1.8M19.5 9.5l-1.8 1.8"/><path d="M5 16a7 7 0 0 1 14 0"/><path d="M1.5 19.5h21"/></svg>',
+  zHourglass:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12M6 21h12"/><path d="M7 3c0 4.2 3 6 5 8-2 2-5 3.8-5 8M17 3c0 4.2-3 6-5 8 2 2 5 3.8 5 8"/></svg>',
+  zClockCheck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="12" r="8"/><path d="M11 7.5v4.5l3 1.8"/><path d="M16.5 4.5l2 2-3.5 3.5"/></svg>',
+  zSunHigh:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"/></svg>',
+  zSunAfternoon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="10.5" r="3.6"/><path d="M12 3.5v2M4.5 10.5h2M19.5 10.5h2M6.6 5.1l1.4 1.4M17.4 5.1l-1.4 1.4"/><path d="M2 19.5h20"/></svg>',
+  zSunLow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12.5" r="3.2"/><path d="M12 5.5v2.2M6.3 8.3l1.5 1.5M17.7 8.3l-1.5 1.5"/><path d="M2 19.5h20"/></svg>',
+  zDusk:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 16a7 7 0 0 1 14 0"/><path d="M1.5 16h21M1.5 19.5h21"/><path d="M12 9V5.5M8 6.8l1.2 1.2M16 6.8l-1.2 1.2"/></svg>',
+  zNightfall:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.4 6.4 0 0 0 10.5 10.5z"/><path d="M18 3.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/></svg>',
+  zMoonHigh:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.5 13.2A8.2 8.2 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z"/><circle cx="18.5" cy="6" r=".9" fill="currentColor" stroke="none"/><circle cx="15" cy="3.5" r=".6" fill="currentColor" stroke="none"/></svg>',
   scroll:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h12v14a3 3 0 0 1-3 3H6a3 3 0 0 0 3-3V3z"/><path d="M9 7h6M9 11h6"/></svg>',
   heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20s-7-4.7-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.3-7 10-7 10z"/></svg>',
   bookmark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12v18l-6-4.2L6 21z"/></svg>',
@@ -799,7 +814,8 @@ function hebDateStr(hd){ return heNum(hd.getDate())+' '+monthNameHe(hd)+' '+heNu
 function hebDateShort(hd){ return heNum(hd.getDate())+' '+monthNameHe(hd); }
 
 /* ---------- settings ---------- */
-const MEMORIAL = ['יִשָּׂשכָר בֶּן אֲבִישַׁי','נָדָב יְהוּדָה בֶּן אֲבִישַׁי','אֲבִישַׁי בֶּן מַלְכָּה'];
+const ZMANIM_LIVE = false; // times temporarily disabled pending updated formulas
+const MEMORIAL = ['אֲבִישַׁי בֶּן יִשָּׂשכָר','יִשָּׂשכָר בֶּן אֲבִישַׁי','נָדָב יְהוּדָה בֶּן אֲבִישַׁי'];
 function memorialHTML(){ return `<div class="memorial">לְעִלּוּי נִשְׁמַת<br>${MEMORIAL.join(' · ')}<br><span>ת.נ.צ.ב.ה</span></div>`; }
 const DEF = { theme:'light', fontScale:1, division:'monthly', sunsetRoll:true, lang:'he', dedType:'none', dedName:'', remindOn:false, remindTime:'20:00' };
 let S = Object.assign({}, DEF, JSON.parse(localStorage.getItem('betel_settings')||'{}'));
@@ -927,18 +943,18 @@ function hebLocation(){
 
 /* ---------- zmanim ---------- */
 const ZDEFS = [
-  ['alotHaShachar','עֲלוֹת הַשַּׁחַר','sunrise'],
-  ['misheyakir','זְמַן טַלִּית וּתְפִלִּין','star'],
-  ['sunrise','נֵץ הַחַמָּה','sunrise'],
-  ['sofZmanShma','סוֹף זְמַן קְרִיאַת שְׁמַע','clock'],
-  ['sofZmanTfilla','סוֹף זְמַן תְּפִלָּה','clock'],
-  ['chatzot','חֲצוֹת הַיּוֹם','noon'],
-  ['minchaGedola','מִנְחָה גְּדוֹלָה','sun'],
-  ['minchaKetana','מִנְחָה קְטַנָּה','sun'],
-  ['plagHaMincha','פְּלַג הַמִּנְחָה','sunset'],
-  ['sunset','שְׁקִיעַת הַחַמָּה','sunset'],
-  ['tzeit','צֵאת הַכּוֹכָבִים','star'],
-  ['chatzotNight','חֲצוֹת הַלַּיְלָה','moon'],
+  ['alotHaShachar','עֲלוֹת הַשַּׁחַר','zDawn'],
+  ['misheyakir','זְמַן טַלִּית וּתְפִלִּין','zEye'],
+  ['sunrise','נֵץ הַחַמָּה','zSunrise'],
+  ['sofZmanShma','סוֹף זְמַן קְרִיאַת שְׁמַע','zHourglass'],
+  ['sofZmanTfilla','סוֹף זְמַן תְּפִלָּה','zClockCheck'],
+  ['chatzot','חֲצוֹת הַיּוֹם','zSunHigh'],
+  ['minchaGedola','מִנְחָה גְּדוֹלָה','zSunAfternoon'],
+  ['minchaKetana','מִנְחָה קְטַנָּה','zSunLow'],
+  ['plagHaMincha','פְּלַג הַמִּנְחָה','zDusk'],
+  ['sunset','שְׁקִיעַת הַחַמָּה','zDusk'],
+  ['tzeit','צֵאת הַכּוֹכָבִים','zNightfall'],
+  ['chatzotNight','חֲצוֹת הַלַּיְלָה','zMoonHigh'],
 ];
 function zmanimFor(dateObj){ return new Zmanim(hebLocation(), dateObj, false); }
 function fmtTime(d){ if(!d||isNaN(d)) return '—';
@@ -1040,7 +1056,7 @@ function renderHome(){
       <div class="date-heb">${hebDateStr(hd)}</div>
       <div class="date-greg">${DOW_HE[hd.getDay()]} · ${new Date().toLocaleDateString('en-GB')}</div>
     </div>
-    ${nz?`<div class="zman-strip"><span class="dot"></span><span><b>${nz.label}</b> ${nz.t} · ${nz.time}</span></div>`:''}
+    ${ZMANIM_LIVE&&nz?`<div class="zman-strip"><span class="dot"></span><span><b>${nz.label}</b> ${nz.t} · ${nz.time}</span></div>`:''}
     ${dedHTML('')}
     ${!LOC.auto?`<div style="text-align:center;margin-top:8px"><button id="locChip" class="loc-chip">${I.loc}<span>עֲדְכֵּן מִקּוּם לַזְּמַנִּים</span></button></div>`:''}
 
@@ -1406,10 +1422,10 @@ function renderDayDetail(hd, events){
       ${st.candle?`<div class="sb-row"><span class="zi">${I.candle}</span><span class="zname">הַדְלָקַת נֵרוֹת</span><span class="ztime gold-text">${fmtTime(st.candle)}</span></div>`:''}
       ${st.havdala?`<div class="sb-row"><span class="zi">${I.moon2}</span><span class="zname">צֵאת הַשַּׁבָּת / חַג</span><span class="ztime gold-text">${fmtTime(st.havdala)}</span></div>`:''}
     </div>`;})()}
-    <div class="loc-line">${I.loc}<span>${LOC.name}</span></div>
+    ${ZMANIM_LIVE?`<div class="loc-line">${I.loc}<span>${LOC.name}</span></div>
     <div class="zmanim-list">
       ${zlist.map(z=>`<div class="zman-row ${z.key===nextKey?'next':''}"><div class="zl"><span class="zi">${I[z.icon]||I.clock}</span><span class="zname">${z.label}</span></div><span class="ztime">${fmtTime(z.date)}</span></div>`).join('')}
-    </div>
+    </div>`:`<div class="zmanim-soon">${I.clock}<span>זְמַנֵּי הַיּוֹם יִתְעַדְכְּנוּ בְּקָרוֹב</span></div>`}
   </div>`;
   el.querySelectorAll('[data-open]').forEach(d=>d.onclick=()=>{ const [a,b]=d.dataset.open.split(',').map(Number); openReader(chaptersOf([a,b]),{daily:false}); });
 }
